@@ -5,47 +5,50 @@ class Solution {
         }
         int m = mat.length;
         int n = mat[0].length;
-        int [] arr = new int[m*n];
-        int i = 0 ;
-        int row = 0;
+        int row = 0 ; 
         int column = 0 ;
-        boolean up = true;
-        while(i<m*n ){
-            //if diagonal is going up
+        int i = 0;
+        int arr [] = new int[m*n];
+        boolean up = true ;
+        while(i<m*n){
             if(up){
-                while(row>0&&column<n-1){
+                while(row>0 && column<n-1){
                     arr[i++] = mat[row][column];
                     row--;
                     column++;
-
                 }
-                arr[i++] = mat[row][column];
-                if(column==n-1){
+                 arr[i++] = mat[row][column];
+                 if(column==n-1){
                     row++;
-                }else{
-                    column++;
-                }
+                 }
+                    else{
+                        column++;
+                    }
+                 
+
             }
-            //downward moving
             else{
-                while(column >0 && row<m-1){
+                while(column>0 && row<m-1){
                     arr[i++] = mat[row][column];
                     row++;
                     column--;
 
+
                 }
-                 arr[i++] = mat[row][column];
-                 if(row == m-1){
+                  arr[i++] = mat[row][column];
+                  if(row==m-1){
                     column++;
-                 }else{
+
+                  }else{
                     row++;
-                 }
+                  }
+
+
             }
-            up = !up;
-
-
+            up =!up;
         }
         return arr;
+
 
         
         
