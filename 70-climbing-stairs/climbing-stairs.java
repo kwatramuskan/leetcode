@@ -3,16 +3,15 @@ class Solution {
         if(n==1||n==2){
             return n ;
         }
-        int prev = 2;
+        int current =0;
+        int prev =2;
         int prevPrev = 1;
-        int current = 0;
-       for(int i = 3 ; i<=n ; i++){
-        current = prev +prevPrev;
-        prevPrev = prev;
-        prev = current;
-       }
+        for(int i =3; i<=n ;i++){
+            current = prev +prevPrev;
+            prevPrev = prev ;
+            prev = current;
+        }
        return current;
-       
         
     }
 }
