@@ -9,9 +9,9 @@ class Solution {
     }
     public boolean check(String s , int left , int right){
         if(left>=right){
-            return true ;
+            return true;
         }
-        return s.charAt(left)==s.charAt(right)&&check(s,left+1,right-1);
+        return s.charAt(left) == s.charAt(right) && check(s,left+1 , right-1);
     }
 
 
