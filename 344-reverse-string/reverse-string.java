@@ -1,6 +1,6 @@
 class Solution {
     public void reverseString(char[] s) {
-       reverseString(s,0,s.length-1);
+      reverseString(s,0,s.length-1);
     }
     static void reverseString(char[] s , int left , int right){
         if(left>=right){
@@ -9,7 +9,6 @@ class Solution {
         char temp = s[left];
         s[left]=s[right];
         s[right]=temp;
-        reverseString(s,left+1,right-1);
-
+         reverseString(s,left+1,right-1);
     }
 } 
