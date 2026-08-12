@@ -2,28 +2,29 @@ class Solution {
     public int[] intersection(int[] nums1, int[] nums2) {
     Arrays.sort(nums1);
     Arrays.sort(nums2);
-    int left = nums1.length-1;
-    int right = nums2.length-1;
     HashSet<Integer>set = new HashSet<>();
-    while(left>=0&&right>=0){
-        if(nums1[left]==nums2[right]){
-            set.add(nums1[left]);
-            left--;
-            right--;
-
-        }else if(nums1[left]<nums2[right]){
-            right--;
+    int first = nums1.length-1;
+    int second = nums2.length-1;
+    while(first>=0&&second>=0){
+        if(nums1[first]==nums2[second]){
+            set.add(nums1[first]);
+            first--;
+            second--;
+        }else if(nums1[first]>nums2[second]){
+            first--;
         }else{
-            left--;
+            second--;
         }
     }
-    int ans[] =new int[set.size()];
+    int ans[] = new int[set.size()];
     ArrayList<Integer>list = new ArrayList<>(set);
-    for(int i =0 ; i<list.size();i++){
-        ans[i]=list.get(i);
+    for(int i =0; i<list.size();i++){
+        ans[i] = list.get(i);
+
     }
-    return ans ;
-        
+    return ans;
 
     }
 }
+//hashset isliye use kiya bcz arraylist mein duplicate values store ho sakti h 
+//fir nayi arraylist bnayi aur uske aandar saare hashset ki values daal di
