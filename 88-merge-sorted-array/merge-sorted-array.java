@@ -7,9 +7,11 @@ class Solution {
         if(nums1[first]>nums2[second]){
             nums1[last]=nums1[first];
             first--;
-        }else {
+        }else{
             nums1[last]=nums2[second];
             second--;
+
+
         }
         last--;
       }
