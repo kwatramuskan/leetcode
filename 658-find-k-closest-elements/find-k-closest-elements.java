@@ -16,4 +16,4 @@ class Solution {
         }
         return ans ;
     }
-}
+}//ye formula yadd rakhna h right-left+1
